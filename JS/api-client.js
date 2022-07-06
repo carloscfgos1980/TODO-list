@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:3000/";
+
 const deleteTasks = async function (content) {
     try {
         const getId = await fetch(BASE_URL, {
@@ -48,8 +49,8 @@ async function postData(task) {
             headers: {
                 "Content-Type": "application/json",
             },
-        });
-        console.log(res)
+        })
+
     } catch (err) {
         console.log(err)
     }
@@ -85,9 +86,3 @@ async function getData() {
         console.log(err)
     }
 }
-
-
-
-
-
-
