@@ -1,8 +1,6 @@
 const addTask = document.querySelector('#add-task');
 
 const addBtn = addTask.querySelector('button');
-console.log(addBtn)
-
 
 const newTask = document.querySelector('#new-task ul');
 
@@ -15,13 +13,9 @@ addBtn.addEventListener('click', function (e) {
 
     const value = addForm.querySelector('input[type="text"]').value;
 
-
-
     postData(value);
 
     getData();
-
-
 
 });
 
@@ -35,11 +29,10 @@ newTask.addEventListener('click', (e) => {
 
         deleteTasks(text);
 
-
-        //deleteData(id);
         const li = e.target.parentElement;
         li.parentNode.removeChild(li);
-        // deleteData();
+
     }
 });
 
+getData();
