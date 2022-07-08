@@ -4,20 +4,33 @@ const addBtn = addTask.querySelector('button');
 
 const newTask = document.querySelector('#new-task ul');
 
-const forms = document.forms;
-
-const addForm = forms['add-task'];
 
 addBtn.addEventListener('click', function (e) {
     e.preventDefault();
 
-    const value = addForm.querySelector('input[type="text"]').value;
+    const value = addTask.querySelector('input[type="text"]').value;
 
     postData(value);
 
-    getData();
+    addingHTML(value);
 
 });
+
+const addingHTML = (elem) => {
+    const li = document.createElement('li');
+    const task = document.createElement('span');
+    const deleteBtn = document.createElement('button');
+
+    task.textContent = elem;
+    deleteBtn.innerHTML = '';
+
+    task.classList.add('task');
+    deleteBtn.classList.add('delete');
+
+    li.appendChild(task);
+    li.appendChild(deleteBtn);
+    newTask.appendChild(li);
+}
 
 
 newTask.addEventListener('click', (e) => {
